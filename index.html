@@ -88,7 +88,11 @@
     <title>Vite + Vue + TS</title>
   </head>
   <body>
-    <div id="app"><!--app--></div>
+    <!-- The entry <script> must come before <div id="app"> so that hydration
+         can already happen on a partial <div id="app"> while it is being
+         streamed -->
     <script type="module" async src="/src/entry-client.ts"></script>
+
+    <div id="app"><!--app--></div>
   </body>
 </html>
